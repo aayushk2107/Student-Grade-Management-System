@@ -17,3 +17,10 @@ A Java console application to manage student records, calculate grades, and gene
 - IntelliJ IDEA
 - Git
 - GitHub
+## Planned Features
+
+- Student Management
+- Grade Calculation
+- Percentage Calculation
+- Report Card Generation
+- Search and Update Records
