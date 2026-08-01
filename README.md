@@ -1,26 +1,37 @@
 # Student Grade Management System
 
-## Author
-Aayush Kumar
+## Problem Statement
 
-## Internship
-CodeZoner Virtual Internship
+Managing student academic records manually can be time-consuming and error-prone. This project provides a Java console-based application to efficiently manage student records, calculate grades, and generate report cards.
 
-## Domain
-Data Structures & Algorithms - Java
+## Project Features
 
-## Project Description
-A Java console application to manage student records, calculate grades, and generate report cards.
+- Add Student
+- Display All Students
+- Search Student by ID
+- Update Student
+- Delete Student
+- Grade Calculation
+- Percentage Calculation
+- Report Card Generation
 
-## Tech Stack
+## Technologies Used
+
 - Java
 - IntelliJ IDEA
 - Git
 - GitHub
-## Planned Features
 
-- Student Management
-- Grade Calculation
-- Percentage Calculation
-- Report Card Generation
-- Search and Update Records
+## Project Structure
+
+model/
+service/
+util/
+data/
+docs/
+
+## Future Improvements
+
+- Database integration
+- GUI using JavaFX
+- PDF report generation
