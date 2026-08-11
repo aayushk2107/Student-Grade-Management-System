@@ -34,5 +34,8 @@ public class Main {
 
         System.out.println("===== AFTER SORTING =====");
         service.displayAllStudents();
+
+        System.out.println("===== STUDENT GRADE DETAILS =====");
+        System.out.println(service.getStudentGradeDetails(103));
     }
 }

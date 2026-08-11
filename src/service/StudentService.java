@@ -81,4 +81,27 @@ public class StudentService {
 
         System.out.println("Students sorted by percentage successfully.");
     }
+
+    public String getStudentGradeDetails(int studentId) {
+
+        Student student = searchStudentById(studentId);
+
+        if (student == null) {
+            return "Student not found.";
+        }
+
+        return "==========================================\n" +
+                "           STUDENT GRADE DETAILS\n" +
+                "==========================================\n" +
+                "Student ID       : " + student.getStudentId() + "\n" +
+                "Name             : " + student.getName() + "\n" +
+                "Course           : " + student.getCourse() + "\n" +
+                "------------------------------------------\n" +
+                "Maths            : " + student.getMathsMarks() + "\n" +
+                "Physics          : " + student.getPhysicsMarks() + "\n" +
+                "Chemistry        : " + student.getChemistryMarks() + "\n" +
+                "English          : " + student.getEnglishMarks() + "\n" +
+                "Computer Science : " + student.getComputerScienceMarks() + "\n" +
+                "==========================================";
+    }
 }
