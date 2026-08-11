@@ -12,7 +12,13 @@ public class StudentService {
         students = new ArrayList<>();
     }
 
+    // Add a student
     public void addStudent(Student student) {
+
+        if (student == null) {
+            System.out.println("Student cannot be null.");
+            return;
+        }
 
         if (searchStudentById(student.getStudentId()) != null) {
             System.out.println("Student ID already exists.");
@@ -23,6 +29,7 @@ public class StudentService {
         System.out.println("Student added successfully.");
     }
 
+    // Display all students
     public void displayAllStudents() {
 
         if (students.isEmpty()) {
@@ -36,6 +43,7 @@ public class StudentService {
         }
     }
 
+    // Search student by ID
     public Student searchStudentById(int studentId) {
 
         for (Student student : students) {
@@ -48,6 +56,7 @@ public class StudentService {
         return null;
     }
 
+    // Sort students by percentage in descending order
     public void sortStudentsByPercentage() {
 
         if (students.isEmpty()) {
@@ -73,8 +82,11 @@ public class StudentService {
                     student2.getComputerScienceMarks()
             );
 
-            double percentage1 = GradeCalculator.calculatePercentage(total1);
-            double percentage2 = GradeCalculator.calculatePercentage(total2);
+            double percentage1 =
+                    GradeCalculator.calculatePercentage(total1);
+
+            double percentage2 =
+                    GradeCalculator.calculatePercentage(total2);
 
             return Double.compare(percentage2, percentage1);
         });
@@ -82,6 +94,7 @@ public class StudentService {
         System.out.println("Students sorted by percentage successfully.");
     }
 
+    // Get grade details of a student
     public String getStudentGradeDetails(int studentId) {
 
         Student student = searchStudentById(studentId);
@@ -103,5 +116,30 @@ public class StudentService {
                 "English          : " + student.getEnglishMarks() + "\n" +
                 "Computer Science : " + student.getComputerScienceMarks() + "\n" +
                 "==========================================";
+    }
+
+    // Update all subject grades of a student
+    public void updateStudentGrades(
+            int studentId,
+            double mathsMarks,
+            double physicsMarks,
+            double chemistryMarks,
+            double englishMarks,
+            double computerScienceMarks) {
+
+        Student student = searchStudentById(studentId);
+
+        if (student == null) {
+            System.out.println("Student not found.");
+            return;
+        }
+
+        student.setMathsMarks(mathsMarks);
+        student.setPhysicsMarks(physicsMarks);
+        student.setChemistryMarks(chemistryMarks);
+        student.setEnglishMarks(englishMarks);
+        student.setComputerScienceMarks(computerScienceMarks);
+
+        System.out.println("Student grades updated successfully.");
     }
 }
