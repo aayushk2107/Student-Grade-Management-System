@@ -2,6 +2,8 @@ package service;
 
 import model.Student;
 
+import util.InputValidator;
+
 import java.util.ArrayList;
 
 public class StudentService {
@@ -131,6 +133,31 @@ public class StudentService {
 
         if (student == null) {
             System.out.println("Student not found.");
+            return;
+        }
+
+        if (!InputValidator.isValidMarks(mathsMarks)) {
+            System.out.println("Invalid Maths marks. Marks must be between 0 and 100.");
+            return;
+        }
+
+        if (!InputValidator.isValidMarks(physicsMarks)) {
+            System.out.println("Invalid Physics marks. Marks must be between 0 and 100.");
+            return;
+        }
+
+        if (!InputValidator.isValidMarks(chemistryMarks)) {
+            System.out.println("Invalid Chemistry marks. Marks must be between 0 and 100.");
+            return;
+        }
+
+        if (!InputValidator.isValidMarks(englishMarks)) {
+            System.out.println("Invalid English marks. Marks must be between 0 and 100.");
+            return;
+        }
+
+        if (!InputValidator.isValidMarks(computerScienceMarks)) {
+            System.out.println("Invalid Computer Science marks. Marks must be between 0 and 100.");
             return;
         }
 
