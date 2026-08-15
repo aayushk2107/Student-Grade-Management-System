@@ -31,6 +31,15 @@ public class StudentService {
         System.out.println("Student added successfully.");
     }
 
+    public void addStudentSilently(Student student) {
+
+        if (searchStudentById(student.getStudentId()) != null) {
+            return;
+        }
+
+        students.add(student);
+    }
+
     public ArrayList<Student> getStudents() {
         return new ArrayList<>(students);
     }
