@@ -31,6 +31,10 @@ public class StudentService {
         System.out.println("Student added successfully.");
     }
 
+    public ArrayList<Student> getStudents() {
+        return new ArrayList<>(students);
+    }
+
     // Display all students
     public void displayAllStudents() {
 

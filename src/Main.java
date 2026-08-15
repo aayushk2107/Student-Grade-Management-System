@@ -43,7 +43,6 @@ public class Main {
                 98
         );
 
-        // Add students
         System.out.println("===== ADDING STUDENTS =====");
 
         service.addStudent(student1);
@@ -78,7 +77,6 @@ public class Main {
                 97
         );
 
-        // Display updated grades
         System.out.println("\n===== UPDATED GRADE DETAILS =====");
         System.out.println(service.getStudentGradeDetails(103));
     }
