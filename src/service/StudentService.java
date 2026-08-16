@@ -217,8 +217,6 @@ public class StudentService {
         System.out.println("Student added successfully.");
     }
 
-    // Add a student without console output.
-    // Used by performance testing to avoid measuring console I/O.
     public void addStudentSilently(Student student) {
 
         if (student == null) {

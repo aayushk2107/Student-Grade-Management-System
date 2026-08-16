@@ -129,6 +129,16 @@ public class StudentServiceUserTest {
     }
 
     @Test
+    void testAddingNullStudentDoesNotCrash() {
+
+        StudentService service = new StudentService();
+
+        assertDoesNotThrow(() -> service.addStudentSilently(null));
+
+        assertEquals(0, service.getStudents().size());
+    }
+
+    @Test
     void testInvalidGradeUpdate() {
 
         StudentService service = new StudentService();
