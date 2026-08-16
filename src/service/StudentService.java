@@ -264,7 +264,6 @@ public class StudentService {
         return null;
     }
 
-    // Sort students by percentage in descending order
     public void sortStudentsByPercentage() {
 
         if (students.isEmpty()) {
@@ -272,13 +271,22 @@ public class StudentService {
             return;
         }
 
-        students.sort((student1, student2) -> {
+        java.util.Map<Student, Double> percentages = new java.util.HashMap<>();
 
-            double percentage1 = calculateStudentPercentage(student1);
-            double percentage2 = calculateStudentPercentage(student2);
+        for (Student student : students) {
+            percentages.put(
+                    student,
+                    calculateStudentPercentage(student)
+            );
+        }
 
-            return Double.compare(percentage2, percentage1);
-        });
+        students.sort(
+                (student1, student2) ->
+                        Double.compare(
+                                percentages.get(student2),
+                                percentages.get(student1)
+                        )
+        );
 
         System.out.println("Students sorted by percentage successfully.");
     }
