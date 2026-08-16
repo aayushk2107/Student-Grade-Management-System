@@ -1,37 +1,40 @@
 # Student Grade Management System
 
-## Problem Statement
+A Java-based console application for managing student information and grades.
 
-Managing student academic records manually can be time-consuming and error-prone. This project provides a Java console-based application to efficiently manage student records, calculate grades, and generate report cards.
+## Features
 
-## Project Features
-
-- Add Student
-- Display All Students
-- Search Student by ID
-- Update Student
-- Delete Student
-- Grade Calculation
-- Percentage Calculation
-- Report Card Generation
-
-## Technologies Used
-
-- Java
-- IntelliJ IDEA
-- Git
-- GitHub
+- Add students
+- View all students
+- Search students by ID
+- Sort students by percentage
+- Calculate total marks and percentage
+- Calculate grades
+- View student grade details
+- Update student grades
+- Generate student transcripts
+- Validate grade input
+- Handle invalid user input
+- Log system activity
+- Unit testing with JUnit
+- Performance testing
 
 ## Project Structure
 
-model/
-service/
-util/
-data/
-docs/
+```text
+src/
+├── Main.java
+├── model/
+│   └── Student.java
+├── service/
+│   ├── StudentService.java
+│   └── GradeCalculator.java
+└── util/
+    ├── InputValidator.java
+    └── AppLogger.java
 
-## Future Improvements
-
-- Database integration
-- GUI using JavaFX
-- PDF report generation
+Test/
+└── service/
+    ├── GradeCalculatorTest.java
+    ├── StudentServiceTest.java
+    └── StudentServicePerformanceTest.java
