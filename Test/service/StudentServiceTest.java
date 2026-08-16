@@ -1,11 +1,40 @@
 package service;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import model.Student;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StudentServiceTest {
+
+    @Test
+    void shouldGenerateStudentTranscript() {
+
+        StudentService service = new StudentService();
+
+        Student student = new Student(
+                103,
+                "Priya",
+                20,
+                "B.Tech CSE",
+                90,
+                88,
+                92,
+                95,
+                97
+        );
+
+        service.addStudent(student);
+
+        String transcript = service.generateStudentTranscript(103);
+
+        assertTrue(transcript.contains("STUDENT TRANSCRIPT"));
+        assertTrue(transcript.contains("Priya"));
+        assertTrue(transcript.contains("B.Tech CSE"));
+        assertTrue(transcript.contains("Total Marks"));
+        assertTrue(transcript.contains("Percentage"));
+        assertTrue(transcript.contains("Grade"));
+    }
 
     @Test
     void shouldSortStudentsByPercentageDescending() {

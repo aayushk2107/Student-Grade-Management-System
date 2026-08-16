@@ -356,6 +356,52 @@ public class StudentService {
         System.out.println("Student grades updated successfully.");
     }
 
+    public String generateStudentTranscript(int studentId) {
+
+        Student student = searchStudentById(studentId);
+
+        if (student == null) {
+            return "Student not found.";
+        }
+
+        double total = GradeCalculator.calculateTotal(
+                student.getMathsMarks(),
+                student.getPhysicsMarks(),
+                student.getChemistryMarks(),
+                student.getEnglishMarks(),
+                student.getComputerScienceMarks()
+        );
+
+        double percentage = GradeCalculator.calculatePercentage(total);
+
+        char grade = GradeCalculator.calculateGrade(percentage);
+
+        return "============================================================\n" +
+                "                    STUDENT TRANSCRIPT\n" +
+                "============================================================\n\n" +
+
+                "Student ID       : " + student.getStudentId() + "\n" +
+                "Name             : " + student.getName() + "\n" +
+                "Age              : " + student.getAge() + "\n" +
+                "Course           : " + student.getCourse() + "\n\n" +
+
+                "------------------------------------------------------------\n" +
+                "SUBJECT                 MARKS\n" +
+                "------------------------------------------------------------\n" +
+                "Maths                   " + student.getMathsMarks() + "\n" +
+                "Physics                 " + student.getPhysicsMarks() + "\n" +
+                "Chemistry               " + student.getChemistryMarks() + "\n" +
+                "English                 " + student.getEnglishMarks() + "\n" +
+                "Computer Science        " + student.getComputerScienceMarks() + "\n" +
+                "------------------------------------------------------------\n\n" +
+
+                String.format("Total Marks             : %.2f / 500%n", total) +
+                String.format("Percentage              : %.2f%%%n", percentage) +
+                "Grade                   : " + grade + "\n\n" +
+
+                "============================================================";
+    }
+
     // Validate all subject marks
     private boolean areAllMarksValid(
             double mathsMarks,

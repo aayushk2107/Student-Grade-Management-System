@@ -49,7 +49,6 @@ public class Main {
         service.addStudent(student2);
         service.addStudent(student3);
 
-        // Display students before sorting
         System.out.println("\n===== BEFORE SORTING =====");
         service.displayAllStudents();
 
@@ -64,6 +63,9 @@ public class Main {
         // Display Priya's grades
         System.out.println("\n===== STUDENT GRADE DETAILS =====");
         System.out.println(service.getStudentGradeDetails(103));
+
+        System.out.println("\n===== STUDENT TRANSCRIPT =====");
+        System.out.println(service.generateStudentTranscript(103));
 
         // Update Priya's grades
         System.out.println("\n===== UPDATING STUDENT GRADES =====");
