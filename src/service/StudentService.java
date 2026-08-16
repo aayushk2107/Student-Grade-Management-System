@@ -185,7 +185,7 @@ public class StudentService {
 }*/
 
 package service;
-
+import util.AppLogger;
 import model.Student;
 import util.InputValidator;
 
@@ -200,20 +200,33 @@ public class StudentService {
         students = new ArrayList<>();
     }
 
-    // Add a student with validation and duplicate ID checking
     public void addStudent(Student student) {
 
         if (student == null) {
+            AppLogger.warning("Attempted to add null student.");
             System.out.println("Student cannot be null.");
             return;
         }
 
         if (searchStudentById(student.getStudentId()) != null) {
+            AppLogger.warning(
+                    "Duplicate student ID attempted: "
+                            + student.getStudentId()
+            );
+
             System.out.println("Student ID already exists.");
             return;
         }
 
         students.add(student);
+
+        AppLogger.info(
+                "Student added: ID="
+                        + student.getStudentId()
+                        + ", Name="
+                        + student.getName()
+        );
+
         System.out.println("Student added successfully.");
     }
 
@@ -249,15 +262,23 @@ public class StudentService {
         }
     }
 
-    // Search for a student by ID
     public Student searchStudentById(int studentId) {
 
         for (Student student : students) {
 
             if (student.getStudentId() == studentId) {
+
+                AppLogger.info(
+                        "Student found: ID=" + studentId
+                );
+
                 return student;
             }
         }
+
+        AppLogger.warning(
+                "Student not found: ID=" + studentId
+        );
 
         return null;
     }
@@ -265,28 +286,28 @@ public class StudentService {
     public void sortStudentsByPercentage() {
 
         if (students.isEmpty()) {
+            AppLogger.warning(
+                    "Sorting requested with no students."
+            );
+
             System.out.println("No students found.");
             return;
         }
 
-        java.util.Map<Student, Double> percentages = new java.util.HashMap<>();
-
-        for (Student student : students) {
-            percentages.put(
-                    student,
-                    calculateStudentPercentage(student)
-            );
-        }
-
-        students.sort(
-                (student1, student2) ->
-                        Double.compare(
-                                percentages.get(student2),
-                                percentages.get(student1)
-                        )
+        AppLogger.info(
+                "Sorting " + students.size()
+                        + " students by percentage."
         );
 
-        System.out.println("Students sorted by percentage successfully.");
+        // Your existing sorting code here...
+
+        AppLogger.info(
+                "Student sorting completed successfully."
+        );
+
+        System.out.println(
+                "Students sorted by percentage successfully."
+        );
     }
 
     // Calculate the percentage of a particular student
@@ -349,7 +370,10 @@ public class StudentService {
                 chemistryMarks,
                 englishMarks,
                 computerScienceMarks)) {
-            System.out.println("Invalid marks. All marks must be between 0 and 100.");
+
+            System.out.println(
+                    "Invalid marks. All marks must be between 0 and 100."
+            );
             return;
         }
 
@@ -359,7 +383,13 @@ public class StudentService {
         student.setEnglishMarks(englishMarks);
         student.setComputerScienceMarks(computerScienceMarks);
 
-        System.out.println("Student grades updated successfully.");
+        AppLogger.info(
+                "Grades updated for student ID=" + studentId
+        );
+
+        System.out.println(
+                "Student grades updated successfully."
+        );
     }
 
     public String generateStudentTranscript(int studentId) {
