@@ -3,7 +3,8 @@ Main Class
 
 Main Menu
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/3191b35e-0848-43c1-9b7b-455b29120649" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/522629d0-4698-4488-97e3-6da2985dcb7d" />
+
 
 
 ```text
