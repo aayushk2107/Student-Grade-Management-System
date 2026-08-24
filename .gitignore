@@ -31,3 +31,5 @@ bin/
 ### Application runtime files ###
 *.log
 *.lck
+
+.idea/artifacts/
