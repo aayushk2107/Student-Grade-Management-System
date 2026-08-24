@@ -1,4 +1,10 @@
+Main Class
 <img width="1259" height="614" alt="image" src="https://github.com/user-attachments/assets/1efab6a6-a72e-480b-98cc-b8f23b1e76be" />
+
+Main Menu
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/3191b35e-0848-43c1-9b7b-455b29120649" />
+
 
 ```text
 # Student Grade Management System
