@@ -3,7 +3,13 @@ Main Class
 
 Main Menu
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/522629d0-4698-4488-97e3-6da2985dcb7d" />
+
+<img width="678" height="452" alt="image" src="https://github.com/user-attachments/assets/9437563b-7f01-4393-8a9e-6343704ece24" />
+
+
+Student Transcript
+
+<img width="785" height="544" alt="image" src="https://github.com/user-attachments/assets/b93beb34-ecb0-42ec-a5b9-db3f794c580b" />
 
 
 
