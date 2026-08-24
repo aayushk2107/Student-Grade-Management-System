@@ -1,3 +1,5 @@
+
+```text
 # Student Grade Management System
 
 A Java-based console application for managing student information and grades.
@@ -19,9 +21,25 @@ A Java-based console application for managing student information and grades.
 - Unit testing with JUnit
 - Performance testing
 
+## Requirements
+
+- Java 17 or higher
+- Git (optional, if cloning the repository)
+
+## Running the Application
+
+Clone the repository:
+
+git clone https://github.com/aayushk2107/Student-Grade-Management-System.git
+
+Open the project in IntelliJ IDEA or another Java IDE and run:
+
+src/Main.java
+
+The application starts as a console-based Student Grade Management System.
+
 ## Project Structure
 
-```text
 src/
 ├── Main.java
 ├── model/
@@ -38,3 +56,31 @@ Test/
     ├── GradeCalculatorTest.java
     ├── StudentServiceTest.java
     └── StudentServicePerformanceTest.java
+
+## Production Deployment
+
+The application is packaged as a Java JAR file for deployment.
+
+### Build
+
+Compile the application and create the executable JAR using Java 17.
+
+### Run
+
+java -jar StudentGradeManagementSystem.jar
+
+The application will start in the terminal and display the Student Grade Management menu.
+
+### Deployment Verification
+
+The deployed application was tested by:
+
+- Starting the application successfully
+- Adding students
+- Viewing student records
+- Searching students
+- Sorting students by percentage
+- Updating grades
+- Generating transcripts
+- Validating invalid input
+- Exiting the application successfully
