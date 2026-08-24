@@ -1,3 +1,4 @@
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/88c4be05-3ee9-4bc3-bb60-d96eebedf90a" />
 
 ```text
 # Student Grade Management System
