@@ -85,3 +85,12 @@ The deployed application was tested by:
 - Generating transcripts
 - Validating invalid input
 - Exiting the application successfully
+
+
+## Problem
+
+Managing student records, marks, grades, and transcripts manually can become difficult as the number of students increases. It can also lead to calculation errors and make it harder to update or find student information.
+
+## Solution
+
+This project provides a Java-based console system that keeps student information and grades organised in one place. It automates calculations, searching, sorting, grade updates, validation, and transcript generation.
