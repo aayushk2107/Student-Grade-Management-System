@@ -11,7 +11,6 @@ public class Main {
 
         StudentService service = new StudentService();
 
-        // Sample students
         service.addStudentSilently(new Student(
                 101, "Aayush", 20, "B.Tech CSE",
                 90, 85, 92, 88, 95

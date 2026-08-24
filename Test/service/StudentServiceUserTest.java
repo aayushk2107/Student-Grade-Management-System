@@ -9,11 +9,8 @@ public class StudentServiceUserTest {
 
     @Test
     void testCompleteUserWorkflow() {
-
-        // 1. User creates the student management system
         StudentService service = new StudentService();
 
-        // 2. User adds students
         Student aayush = new Student(
                 101,
                 "Aayush",
@@ -42,27 +39,23 @@ public class StudentServiceUserTest {
         service.addStudent(rahul);
         service.addStudent(priya);
 
-        // 3. User searches for a student
         Student foundStudent = service.searchStudentById(103);
 
         assertNotNull(foundStudent);
         assertEquals("Priya", foundStudent.getName());
 
-        // 4. User sorts students by percentage
         service.sortStudentsByPercentage();
 
         assertEquals(103, service.getStudents().get(0).getStudentId());
         assertEquals(101, service.getStudents().get(1).getStudentId());
         assertEquals(102, service.getStudents().get(2).getStudentId());
 
-        // 5. User views grade details
         String gradeDetails = service.getStudentGradeDetails(103);
 
         assertTrue(gradeDetails.contains("Priya"));
         assertTrue(gradeDetails.contains("95.0"));
         assertTrue(gradeDetails.contains("98.0"));
 
-        // 6. User updates student's grades
         service.updateStudentGrades(
                 103,
                 90,
@@ -72,7 +65,7 @@ public class StudentServiceUserTest {
                 97
         );
 
-        // 7. Verify that the updated grades are actually visible
+
         Student updatedStudent = service.searchStudentById(103);
 
         assertNotNull(updatedStudent);
@@ -82,7 +75,6 @@ public class StudentServiceUserTest {
         assertEquals(95, updatedStudent.getEnglishMarks());
         assertEquals(97, updatedStudent.getComputerScienceMarks());
 
-        // 8. Verify updated grade details
         String updatedDetails =
                 service.getStudentGradeDetails(103);
 
@@ -163,7 +155,6 @@ public class StudentServiceUserTest {
                 97
         );
 
-        // Original Maths mark should remain unchanged
         assertEquals(90, student.getMathsMarks());
     }
 }

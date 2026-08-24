@@ -16,10 +16,6 @@ public class StudentServicePerformanceTest {
 
         Random random = new Random(42);
 
-        // -------------------------------
-        // 1. Measure student insertion
-        // -------------------------------
-
         long startAdd = System.nanoTime();
 
         for (int i = 1; i <= numberOfStudents; i++) {
@@ -41,9 +37,6 @@ public class StudentServicePerformanceTest {
 
         long endAdd = System.nanoTime();
 
-        // -------------------------------
-        // 2. Measure sorting
-        // -------------------------------
 
         long startSort = System.nanoTime();
 
@@ -51,9 +44,6 @@ public class StudentServicePerformanceTest {
 
         long endSort = System.nanoTime();
 
-        // -------------------------------
-        // 3. Measure searching
-        // -------------------------------
 
         long startSearch = System.nanoTime();
 
